@@ -45,7 +45,7 @@ async function getWeather() {
 async function fetchBuses() {
   try {
     busList = document.getElementById('bus-list'); // Use a variável global
-    const response = await axios.get('/buses'); 
+    const response = await fetch('/api/buses'); 
     const buses = response.data;
 
     // Verifica se busList está definido antes de tentar acessar
