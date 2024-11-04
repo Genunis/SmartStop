@@ -33,14 +33,14 @@ const busSchema = new mongoose.Schema({
 const Bus = mongoose.model('Bus', busSchema);
 
 // Endpoint para buscar lista de ônibus
-app.get('/buses', async (req, res) => {
-  try {
-    const buses = await Bus.find(); // Busca todos os ônibus no banco de dados
-    res.json(buses); // Retorna como JSON
-  } catch (error) {
-    console.error("Erro ao buscar dados dos ônibus:", error);
-    res.status(500).json({ error: 'Erro ao buscar dados dos ônibus' });
-  }
+app.get('/api/buses', async (req, res) => {
+    try {
+        const buses = await Bus.find(); // Supondo que você esteja usando Mongoose
+        res.json(buses);
+    } catch (error) {
+        console.error('Erro ao buscar dados dos ônibus:', error);
+        res.status(500).send('Erro interno do servidor');
+    }
 });
 
 app.get('/', (req, res) => {
