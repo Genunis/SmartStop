@@ -46,7 +46,13 @@ async function fetchBuses() {
   try {
     busList = document.getElementById('bus-list'); // Use a variável global
     const response = await fetch('/api/buses'); 
-    const buses = response.data;
+    // Verifique se a resposta é válida
+    if (!response.ok) {
+      throw new Error('Erro ao buscar os dados dos ônibus: ' + response.statusText);
+    }
+
+    const buses = await response.json(); // Parse a resposta como JSON
+    console.log('Dados dos ônibus:', buses); // Adicione este log para depuração
 
     // Verifica se busList está definido antes de tentar acessar
     if (!busList) {
@@ -54,7 +60,7 @@ async function fetchBuses() {
       return;
     }
 
-    // Atualiza o conteúdo de 'busList' com as divs formatadas para cada ônibus
+     // Atualiza o conteúdo de 'busList' com as divs formatadas para cada ônibus
     busList.innerHTML = buses.map(bus => `
       <tr class="bus-line-div">
         <td class="bus-number">${bus.number}</td>
