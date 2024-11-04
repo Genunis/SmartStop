@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    const ROOM_ID = "<%= roomId %>";
+  </script>
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="/script.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/room.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  
+<div id="display">
+<div class="bus-stop-display">
+  <div class="title"><img src="https://img.icons8.com/?size=100&id=9351&format=png&color=FFFFFF" alt="onibus">  Ponto Jurubatuba</div>
+  <div class="table-container">
+    <table id="bus-f">
+      <thead>
+        <tr class="bus-line-div-titulo">
+          <th class="bus-number-titulo">Linha</th>
+          <th class="bus-line-titulo">----</th>
+          <th class="arrival-time-titulo">Hora</th>
+          <th class="status-titulo">Status</th>
+        </tr>
+      </thead>
+      <tbody id="bus-list">
+        <!-- Dados da tabela vão aqui -->
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="footer">
+    <div id="current-time"></div>
+    <div id="current-date"></div>
+    <div id="weather"></div>
+  </div>
+</div>
+
+<div class="emergency-buttons">
+  <button id="police-button"><img src="https://img.icons8.com/?size=100&id=ukQdEZnYPhAF&format=png&color=000000" alt=""></button>
+  <button id="fire-button"><img src="https://img.icons8.com/?size=100&id=DGjYwjiGe4Nk&format=png&color=000000" alt=""></button>
+  <button id="medic-button"><img src="https://img.icons8.com/?size=100&id=LAU6zQUn5Lnh&format=png&color=000000" alt=""></button>
+  <button id="panic-button"><img src="https://img.icons8.com/?size=100&id=EGBLHPlnLNhq&format=png&color=000000" alt=""></button>
+</div>
+</div>
+<div id="video-grid">
+
+</div>  
+</body>
+</html>
+
+
+
